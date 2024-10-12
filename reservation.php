@@ -32,17 +32,17 @@
     <header>
         <nav class="navbar navbar-expand-md justify-content-end navbar-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Logo</a>
+                <a class="navbar-brand" href="index.php">Logo</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav ms-auto">
                       <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="menu.html">Menu</a>
+                        <a class="nav-link" href="menu.php">Menu</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Reservation</a>
@@ -50,9 +50,9 @@
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Other</a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="./bootstrap-5.3.3-dist/ABOUTUS.html">About us</a></li>
+                          <li><a class="dropdown-item" href="./bootstrap-5.3.3-dist/ABOUTUS.php">About us</a></li>
                           <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                          <li><a class="dropdown-item" href="./bootstrap-5.3.3-dist/CONTACT.html">Contact</a></li>
+                          <li><a class="dropdown-item" href="./bootstrap-5.3.3-dist/CONTACT.php">Contact</a></li>
                         </ul>
                       </li>
                     </ul>
