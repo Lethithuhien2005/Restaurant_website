@@ -9,7 +9,7 @@ window.addEventListener('scroll', function() {
 });
 
 // transiting effect img
-$('.owl-carousel').owlCarousel({
+$('.header-container').owlCarousel({
     loop:true,
     margin:10,
     nav:false,
@@ -27,6 +27,29 @@ $('.owl-carousel').owlCarousel({
         },
         1000:{
             items:1
+        }
+    }
+})
+
+// transiting best-seller img
+$('.best-seller-card').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplaySpeed: 1500,
+    dotSpeed: 1500,
+    autoplayHoverPause: true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
         }
     }
 })
