@@ -6,82 +6,93 @@
     <title>Management Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+   
+}
 
-        .dashboard {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
 
-        .overview {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-        }
+.overview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
 
-        .overview-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+.overview-card, .chart-container, .report-card {
+    background: rgba(255, 255, 255, 0.3); /* Nền thẻ trắng nhưng trong suốt hơn */
+    backdrop-filter: blur(10px); /* Hiệu ứng làm mờ phía sau */
+    padding: 20px;
+    text-align: center; /* Căn giữa nội dung thẻ */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bóng đổ để tạo chiều sâu */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Viền nhẹ */
+    color: #333; /* Màu chữ tối hơn (xám đậm) để dễ đọc */
+}
 
-        .overview-card h5 {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
+.overview-card h5, .chart-container h5, .report-card h5 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #000; /* Màu chữ tiêu đề đen để đảm bảo dễ đọc */
+}
 
-        .overview-card p {
-            font-size: 24px;
-            font-weight: bold;
-        }
+.overview-card p, .report-card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000; /* Màu chữ đen đậm */
+}
 
-        .charts {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-            margin-top: 40px;
-            width: 100%;
-            max-width: 1200px;
-        }
+.charts, .reports {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+/* Media Queries */
+@media (max-width: 1200px) {
+    .content {
+        margin-left: 25%;
+        width: 65%;
+    }
 
-        .chart-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .sidebar {
+        width: 25%;
+    }
+}
 
-        .reports {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-            margin-top: 40px;
-            width: 100%;
-            max-width: 1200px;
-        }
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
 
-        .report-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        display: none;
+    }
+
+    .sidebar.active {
+        display: block;
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+}
     </style>
 </head>
 <body>
@@ -160,7 +171,12 @@
         </div>
     </div>
 </div>
-
+<script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
 <!-- Using Chart.js library to draw charts -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>

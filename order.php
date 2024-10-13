@@ -6,79 +6,95 @@
   <title>Order Management</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-}
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+    }
 
-.container {
-  display: flex;
-  flex-direction: column;
-}
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
 
-.sidebar, .main-content, .return-requests {
-  background-color: #ffffff;
+   .main-content, .return-requests {
+      background-color: #ffffff;
+      border-radius: 15px; /* Bo góc bảng */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 15px;
+    }
 
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
 
-.main-content, .return-requests {
-  padding: 15px;
-}
 
-.sidebar {
-  background-color: #343a40;
-  color: #ffffff;
-  min-height: 100px;
-}
+    h1, h5 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #343a40; /* Thay đổi màu chữ */
+    }
 
-h1, h5 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
+    .table {
+      margin-top: 20px;
+      border-radius: 10px; /* Bo góc bảng */
+      overflow: hidden; /* Ẩn các góc thừa */
+    }
 
-.table {
-  margin-top: 20px;
-}
+    .table th, .table td {
+      text-align: center;
+      padding: 12px; /* Thêm khoảng cách giữa chữ và viền */
+    }
 
-.table th, .table td {
-  text-align: center;
-}
+    .table th {
+      background-color: #6c757d; /* Thay đổi màu nền header */
+      color: #ffffff;
+    }
 
-.table th {
-  background-color: #343a40;
-  color: #ffffff;
-}
+    .btn {
+      margin: 0 5px;
+      border-radius: 20px; /* Bo góc nút */
+    }
 
-.btn {
-  margin: 0 5px;
-}
+    .modal-header, .modal-footer {
+      background-color: #6c757d; /* Thay đổi màu nền modal */
+      color: #ffffff;
+    }
 
-.modal-header, .modal-footer {
-  background-color: #343a40;
-  color: #ffffff;
-}
+    .modal-title {
+      font-size: 1.5rem;
+    }
 
-.modal-title {
-  font-size: 1.5rem;
-}
+    .content-row {
+      display: flex;
+      flex-direction: column;
+    }
 
-.content-row {
-  display: flex;
-  flex-direction: column;
-}
+    .return-requests {
+      flex: 1;
+      margin-right: 20px;
+    }
 
-.sidebar, .main-content, .return-requests {
-  flex: 1;
-  margin-right: 20px;
-}
+    .return-requests:last-child {
+      margin-right: 0;
+    }
 
-.return-requests:last-child {
-  margin-right: 0;
-}
+    .btn-success, .btn-danger {
+      background-color: #28a745; /* Màu xanh cho nút Accept */
+      border-color: #28a745; /* Màu viền cho nút Accept */
+    }
+
+    .btn-danger {
+      background-color: #dc3545; /* Màu đỏ cho nút Reject */
+      border-color: #dc3545; /* Màu viền cho nút Reject */
+    }
+
+    .btn-primary {
+      background-color: #007bff; /* Màu xanh cho nút View */
+      border-color: #007bff; /* Màu viền cho nút View */
+    }
+
+    .btn-success:hover, .btn-danger:hover, .btn-primary:hover {
+      opacity: 0.8; /* Hiệu ứng khi hover */
+    }
   </style>
 </head>
 <body>
@@ -183,7 +199,14 @@ h1, h5 {
           </tbody>
         </table>
       </div>
+    </div>
 
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+      function toggleSidebar() {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+      }
+    </script>
 </body>
 </html>
